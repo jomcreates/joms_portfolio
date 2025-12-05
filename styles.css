@@ -1762,35 +1762,41 @@ body {
     
     .about-header {
         margin-bottom: 40px;
-        padding: 15px 30px;
-        flex-wrap: wrap;
-        gap: 20px;
+        padding: 12px 15px;
+        flex-wrap: nowrap;
+        gap: 10px;
+        justify-content: space-between;
     }
     
     .about-header.sticky-nav {
-        padding: 12px 30px;
+        padding: 10px 15px;
     }
     
     .about-logo {
-        height: 50px;
+        height: 40px;
+        flex-shrink: 0;
     }
     
     .about-header.sticky-nav .about-logo {
-        height: 45px;
+        height: 35px;
     }
     
     .about-navigation {
-        gap: 20px;
-        flex-wrap: wrap;
+        gap: 8px;
+        flex-wrap: nowrap;
+        flex-shrink: 1;
+        min-width: 0;
     }
     
     .about-nav-link {
-        font-size: 14px;
+        font-size: 11px;
+        white-space: nowrap;
     }
     
     .about-nav-button {
-        font-size: 12px;
-        padding: 8px 18px;
+        font-size: 10px;
+        padding: 6px 12px;
+        white-space: nowrap;
     }
     
     .about-content {
@@ -1908,6 +1914,36 @@ body {
 @media (max-width: 480px) {
     .about-section {
         padding: 40px 20px;
+    }
+    
+    .about-header {
+        padding: 10px 10px;
+        gap: 8px;
+    }
+    
+    .about-header.sticky-nav {
+        padding: 8px 10px;
+    }
+    
+    .about-logo {
+        height: 35px;
+    }
+    
+    .about-header.sticky-nav .about-logo {
+        height: 30px;
+    }
+    
+    .about-navigation {
+        gap: 6px;
+    }
+    
+    .about-nav-link {
+        font-size: 10px;
+    }
+    
+    .about-nav-button {
+        font-size: 9px;
+        padding: 5px 10px;
     }
     
     .about-title {
