@@ -309,9 +309,13 @@
         showProject(0);
     }
     
-    // Infinite Loop Scrolling for Design Images
+    // Infinite Loop Scrolling for Design Images (Mobile Only)
     function setupInfiniteScroll(container) {
         if (!container) return;
+        
+        // Only enable infinite scroll on mobile devices (768px and below)
+        const isMobile = window.innerWidth <= 768;
+        if (!isMobile) return;
         
         const images = Array.from(container.querySelectorAll('.design-screenshot:not(.clone)'));
         if (images.length === 0) return;
@@ -369,12 +373,24 @@
         checkAndSetup();
     }
     
-    // Setup infinite scroll for all design preview rows after a short delay
-    setTimeout(() => {
-        document.querySelectorAll('.design-preview-row').forEach(row => {
-            setupInfiniteScroll(row);
-        });
-    }, 500);
+    // Setup infinite scroll for all design preview rows after a short delay (mobile only)
+    function initInfiniteScroll() {
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            document.querySelectorAll('.design-preview-row').forEach(row => {
+                setupInfiniteScroll(row);
+            });
+        }
+    }
+    
+    setTimeout(initInfiniteScroll, 500);
+    
+    // Re-check on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(initInfiniteScroll, 300);
+    });
     
     
 });
