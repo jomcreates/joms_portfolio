@@ -361,6 +361,7 @@ body {
 
 .portrait-flip-card-inner {
     position: relative;
+    left: 10px;
     width: 78%;
     height: 100%;
     text-align: center;
@@ -1132,11 +1133,15 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
+    overflow-x: visible;
+    overflow-y: visible;
 }
 
 .design-screenshot {
-    flex: 1;
-    max-width: 22%;
+    flex: 0 0 calc((100% - 45px) / 4);
+    width: calc((100% - 45px) / 4);
+    max-width: calc((100% - 45px) / 4);
+    min-width: 0;
     height: auto;
     object-fit: contain;
     border-radius: 8px;
@@ -1150,9 +1155,16 @@ body {
 }
 
 @media (max-width: 1024px) {
+    .project-preview-wrapper {
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
     .design-preview-row {
         gap: 10px;
         padding: 0 10px;
+        overflow-x: visible;
+        overflow-y: visible;
     }
     
     .design-screenshot {
@@ -1295,11 +1307,11 @@ body {
 .project-preview-wrapper {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+    justify-content: center;
+    gap: 30px;
     margin-bottom: 30px;
     position: relative;
-    padding: 0;
+    padding: 0 20px;
     width: 100%;
     overflow: hidden;
 }
@@ -1319,6 +1331,7 @@ body {
     justify-content: center;
     flex-shrink: 0;
     z-index: 10;
+    position: relative;
 }
 
 .nav-arrow:hover {
@@ -1734,6 +1747,8 @@ body {
     
     .portrait-container {
         padding: 30px 15px;
+        position: relative;
+        left: 10px;
     }
     
     .binary-rain-background {
