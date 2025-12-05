@@ -1837,9 +1837,14 @@ body {
         padding: 30px 0;
     }
     
+    .service-item {
+        text-align: center;
+    }
+    
     .service-header {
         gap: 15px;
         margin-bottom: 20px;
+        justify-content: center;
     }
     
     .service-icon {
@@ -1850,11 +1855,15 @@ body {
     .service-title {
         font-size: 24px;
         letter-spacing: 1px;
+        text-align: center;
+        position: relative;
+        left: -34px;
     }
     
     .service-description {
         font-size: 14px;
         line-height: 1.6;
+        text-align: center;
     }
     
     .skills-section {
@@ -1912,10 +1921,22 @@ body {
     
     .service-title {
         font-size: 20px;
+        text-align: center;
+        position: relative;
+        left: -34px;
+    }
+    
+    .service-item {
+        text-align: center;
+    }
+    
+    .service-header {
+        justify-content: center;
     }
     
     .service-description {
         font-size: 13px;
+        text-align: center;
     }
     
     .service-icon {
